@@ -1,107 +1,105 @@
 @import url('https://fonts.googleapis.com/css2?family=Stack+Sans+Notch:wght@200..700&display=swap');
 
-html,
-body {
+* {
+  box-sizing: border-box;
+}
+
+html, body {
   margin: 0;
-  padding: 0;
   width: 100%;
   height: 100%;
-  overflow: hidden;
+  font-family: "Stack Sans Notch", sans-serif;
   background: #000;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  color: white;
+  overflow: hidden;
 }
 
+/* THREE.JS CANVAS */
 canvas {
-  display: block;
+  position: fixed;
+  inset: 0;
+  z-index: 0;
 }
 
-a {
-  text-decoration: none
-}
-
-/* -- LOGO -- */
-
+/* LOGO */
 .logo {
   position: fixed;
-  width: auto;
-  padding-top: 20px;
-  padding-left: 10px;
-  align-items: center;
+  top: 20px;
+  left: 16px;
+  z-index: 5;
 }
 
 .logo a {
-  font-family: "Stack Sans Notch", sans-serif;
-  font-weight: 500;
-  font-style: normal;
   display: flex;
   align-items: center;
   gap: 8px;
-  color: #ffffff8f;
+  text-decoration: none;
+  color: #ffffffaa;
+  font-weight: 500;
 }
 
-/* -- 404 TEXT -- */
+/* MAIN CONTENT */
+.content {
+  position: relative;
+  z-index: 5;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+}
 
+/* 404 */
 .error_code {
-  color: #ffffff8f;
-  font-family: "Stack Sans Notch", sans-serif;
+  font-size: clamp(6rem, 22vw, 18rem);
   font-weight: 700;
-  font-size: clamp(6rem, 20vw, 30vh);
-  margin-top: 5vh;
-  margin-bottom: 5vh;
-  text-align: center;
+  margin: 0;
+  color: #ffffffcc;
 }
 
-/* -- OOPS! -- */
-
+/* TITLE */
 .title {
-  color: white;
-  font-family: "Stack Sans Notch", sans-serif;
+  font-size: clamp(1.5rem, 5vw, 3rem);
   font-weight: 700;
-  text-align: center;
-  font-size: 5vmin;
-  margin-top: 0vmin;
+  margin: 10px 0;
 }
 
-/* -- DESC -- */
-
+/* SUBTITLE */
 .subtitle {
-  color: #ffffff;
-  font-family: "Stack Sans Notch", sans-serif;
-  font-weight: 400;
-  text-align: center;
-  font-size: 3.5vmin;
-  margin-top: -1vmin;
-  margin-bottom: 9vmin;
+  font-size: clamp(1rem, 3.5vw, 1.4rem);
+  opacity: 0.85;
+  max-width: 600px;
+  margin-bottom: 30px;
 }
 
-/* -- BACK -- */
-
+/* BUTTON */
 .btn-back {
   border: 1px solid white;
+  padding: 12px 22px;
   color: white;
-  height: 5vmin;
-  padding: 12px;
-  font-family: "Stack Sans Notch", sans-serif;
-  border-radius: 5px;
-  box-shadow: 4px 4px 0px 0px rgba(255, 255, 255, 0.5);
+  text-decoration: none;
+  font-weight: 500;
+  border-radius: 6px;
+  box-shadow: 4px 4px 0 rgba(255,255,255,0.4);
+  transition: all 0.2s ease;
 }
 
 .btn-back:hover {
-  background: #ffffff50
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0 rgba(255,255,255,0.6);
+  background: rgba(255,255,255,0.1);
 }
 
-@media (max-width: 500px) {
-
-  .logo a .name {
-    display: none
+/* MOBILE */
+@media (max-width: 600px) {
+  .logo .name {
+    display: none;
   }
 
-  .error_code {
-    font-size: 15vh;
-    margin-top: 15vh;
-    margin-bottom: 15vh;
+  .subtitle {
+    line-height: 1.4;
   }
-
 }
