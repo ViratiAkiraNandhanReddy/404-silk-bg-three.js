@@ -51,9 +51,10 @@ const scene = new THREE.Scene();
 const camera = new THREE.OrthographicCamera(-1, 1, 1, -1, 0.1, 10);
 camera.position.z = 1;
 
-const renderer = new THREE.WebGLRenderer({ antialias: true });
+const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
 renderer.setSize(innerWidth, innerHeight);
 renderer.setPixelRatio(Math.min(devicePixelRatio, 2));
+renderer.domElement.style.display = 'block';
 document.body.appendChild(renderer.domElement);
 
 /* ================= UNIFORMS ================= */
@@ -98,4 +99,15 @@ animate();
 addEventListener('resize', () => {
   renderer.setSize(innerWidth, innerHeight);
   renderer.setPixelRatio(Math.min(devicePixelRatio, 2));
+});
+
+/* ================= ERROR HANDLING ================= */
+
+window.addEventListener('error', (event) => {
+  console.error('Error:', event.error);
+});
+
+renderer.domElement.addEventListener('webglcontextlost', (event) => {
+  event.preventDefault();
+  console.warn('WebGL context lost');
 });

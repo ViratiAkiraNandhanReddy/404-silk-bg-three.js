@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>404 • Silk Background</title>
+  <meta name="description" content="A beautiful 404 error page with animated silk background" />
+  <title>404-silk-bg-three.js</title>
 
-  <link href="https://fonts.googleapis.com/css2?family=Stack+Sans+Notch:wght@200..700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 
@@ -18,8 +18,15 @@
       Sorry, we couldn't locate the page you requested.<br>
       It might have been removed or the link may be incorrect.
     </p>
-    <a class="btn-back" href="javascript:history.back()">Back to previous page</a>
+    <a class="btn-back" href="javascript:history.back()" role="button">Back to previous page</a>
   </main>
+
+  <noscript>
+    <style>
+      .content { position: static; margin-top: 20vh; }
+      .subtitle { color: #ccc; }
+    </style>
+  </noscript>
 
   <script type="module" src="three.js"></script>
 </body>
